@@ -1,0 +1,9 @@
+# Ignore Everything
+*
+
+# But not .c
+!*.c
+# Or directories
+!*/
+!.gitignore
+!README.md
