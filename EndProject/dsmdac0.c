@@ -73,9 +73,22 @@ void refresh_display();
 
 void calculate();
 
+void transmission_init();
+void parse_string_to_num();
+
+unsigned char receive_buf[4] = {'\0'};
+unsigned char receive_buf_index;
+__bit __at(0x19) receive_flag;
+
+unsigned char left_digit;
+unsigned char middle_digit;
+unsigned char right_digit;
+
+unsigned char temp_number = 0;
+
 void t0_int() __interrupt(1){
 	TF0 = 0;
-	if(pwm_flag){
+	if (pwm_flag) {
 		pwm_flag = 0;
 		test_diod = 1;
 		
@@ -96,6 +109,16 @@ void t0_int() __interrupt(1){
 	}
 }
 
+void serial_int() __interrupt(4){
+	if (RI) {
+		receive_buf[receive_buf_index] = SBUF;
+		++receive_buf_index;
+		
+		RI = 0;
+		receive_flag = 1;
+	}
+}
+
 void main(){
 	unsigned char key_mat_1, key_mult, i;
 	
@@ -105,9 +128,20 @@ void main(){
 	
 	pwm_init();
 	
+	transmission_init();
+	
 	main_page_change_state();
 	
 	while(1){
+		if (receive_flag) {
+			if (receive_buf_index == 3) {
+				parse_string_to_num();
+				
+				receive_buf_index = 0;
+			}
+			receive_flag = 0;
+		}
+		
 		if(software_timer >= 2){
 			software_timer = 0;
 			
@@ -405,6 +439,41 @@ void pwm_init(){
 	TR0 = 1; // aktywność licznika T0
 }
 
+void transmission_init(){
+	SCON = 0b01010000; // SM0 = 0 SM1 = 1 REN = 1
+	
+	TMOD &= 0b00101111; // ustawienie t1
+	TMOD |= 0b00100000; // w tryb 2
+	
+	TL1 = 0xFD;
+	TH1 = 0xFD;
+	
+	PCON &= 0b01111111; // tryb 0
+	
+	ES = 1;
+	EA = 1;
+	
+	receive_flag = 0;
+	receive_buf_index = 0;
+	
+	TF1 = 0;
+	TR1 = 1;
+}
+
+void parse_string_to_num(){
+	right_digit = receive_buf[2] - 48;
+	middle_digit = receive_buf[1] - 48;
+	left_digit = receive_buf[0] - 48;
+	
+	temp_number = left_digit * 100 + middle_digit * 10 + right_digit * 1;
+	
+	if (temp_number <= 120 && temp_number >= 30) {
+		k = temp_number;
+		k_copy = k;
+		k_changed = 1;
+	}
+}
+
 void calculate(){
 	L = (18432 / 1000) * k;
 	H = 18432 - L;
@@ -530,4 +599,3 @@ void pwm_edit(){
 		lcd_data(pwm_value[i]);
 	}
 }
-
