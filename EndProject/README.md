@@ -19,7 +19,6 @@ Gdy wyświetla  aktualną  wartość  parametru  wypełnienia  PWM.
 Gdy dostępne  jest  menu  graficzne  oraz  można  się  po nim  poruszać  z  użyciem  strzałek  klawiatury matrycowej.  Aby w  ogóle otrzymać  punkty w  ramach podzadania  4 możliwe  musi  być  poruszanie  się  po całym  menu  - niedziałające  opcje  nadal  należy wyświetlić.
 
 <ul style="list-style-type:none;">
-    <i>
         <li> > 1. CHANGE STATE 
             <ul style="list-style-type:none">
                 <li> > 1.1. START </li>
@@ -36,7 +35,6 @@ Gdy dostępne  jest  menu  graficzne  oraz  można  się  po nim  poruszać  z  
                 <li> > 2.2. RESET </li>
             </ul>
         </li>
-    </i>
 </ul>
 
 ***4.1.(\*\) (5 pkt.)***<br>
@@ -48,7 +46,7 @@ Po wejściu do podmenu SETTINGS  wskazanie  PWM i  zatwierdzenie  klawiszem  ENT
 
 ### ***5. Port  transmisji  szeregowej***
 ***5.1. (\*\) (20 pkt.)***<br>
-Gdy pozwala  zmienić  ustawienie  wypełnienia  PWM przez  wysłanie  trzech  cyfr  z  komputera  PC  (z  zakresu 030-120).
+Gdy pozwala  zmienić  ustawienie  wypełnienia  PWM przez  wysłanie  trzech  cyfr  z  komputera  PC  (z  zakresu 030-120).<br>
 ***5.2. (\*\) (10 pkt.)***<br>
 Gdy co sekundę  odsyła  aktualną  wartość  (trzy  cyfry)  wypełnienia  PWM do komputera  PC.
 
