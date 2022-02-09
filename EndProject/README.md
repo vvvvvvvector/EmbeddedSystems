@@ -18,24 +18,18 @@ Gdy wyświetla  aktualną  wartość  parametru  wypełnienia  PWM.
 ### ***4. Wyświetlacz  LCD  i  klawiatura matrycowa***
 Gdy dostępne  jest  menu  graficzne  oraz  można  się  po nim  poruszać  z  użyciem  strzałek  klawiatury matrycowej.  Aby w  ogóle otrzymać  punkty w  ramach podzadania  4 możliwe  musi  być  poruszanie  się  po całym  menu  - niedziałające  opcje  nadal  należy wyświetlić.
 
-<style>
-    ul{
-        list-style-type:none;
-    }
-</style>
-
-<ul>
+<ul style="list-style-type:none;">
     <i>
         <li> > 1. CHANGE STATE 
-            <ul>
+            <ul style="list-style-type:none;">
                 <li> > 1.1. START </li>
                 <li> > 1.2. STOP </li>
             </ul>
         </li>
         <li> > 2. SETTINGS
-            <ul> 
+            <ul style="list-style-type:none;"> 
                 <li> > 2.1. PWM
-                    <ul> 
+                    <ul style="list-style-type:none;"> 
                     <li> > 2.1.1 <b>030</b> </li>
                     </ul>
                 </li>
@@ -56,6 +50,6 @@ Po wejściu do podmenu SETTINGS  wskazanie  PWM i  zatwierdzenie  klawiszem  ENT
 ***5.1. (\*\) (20 pkt.)***<br>
 Gdy pozwala  zmienić  ustawienie  wypełnienia  PWM przez  wysłanie  trzech  cyfr  z  komputera  PC  (z  zakresu 030-120).<br>
 ***5.2. (\*\) (10 pkt.)***<br>
-Gdy co sekundę  odsyła  aktualną  wartość  (trzy  cyfry)  wypełnienia  PWM do komputera  PC.
+~~Gdy co sekundę  odsyła  aktualną  wartość  (trzy  cyfry)  wypełnienia  PWM do komputera  PC.~~
 
 
