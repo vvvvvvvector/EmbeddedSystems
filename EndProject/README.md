@@ -18,18 +18,18 @@ Gdy wyświetla  aktualną  wartość  parametru  wypełnienia  PWM.
 ### ***4. Wyświetlacz  LCD  i  klawiatura matrycowa***
 Gdy dostępne  jest  menu  graficzne  oraz  można  się  po nim  poruszać  z  użyciem  strzałek  klawiatury matrycowej.  Aby w  ogóle otrzymać  punkty w  ramach podzadania  4 możliwe  musi  być  poruszanie  się  po całym  menu  - niedziałające  opcje  nadal  należy wyświetlić.
 
-<ul style="list-style-type:none;">
+<ul>
     <i>
         <li> > 1. CHANGE STATE 
-            <ul style="list-style-type:none;">
+            <ul>
                 <li> > 1.1. START </li>
                 <li> > 1.2. STOP </li>
             </ul>
         </li>
         <li> > 2. SETTINGS
-            <ul style="list-style-type:none;"> 
+            <ul> 
                 <li> > 2.1. PWM
-                    <ul style="list-style-type:none;"> 
+                    <ul> 
                     <li> > 2.1.1 <b>030</b> </li>
                     </ul>
                 </li>
